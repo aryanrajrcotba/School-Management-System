@@ -1,0 +1,38 @@
+DROP DATABASE IF EXISTS school_management;
+CREATE DATABASE school_management;
+USE school_management;
+
+-- Table for students
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    age INT,
+    grade VARCHAR(10)
+);
+
+-- Table for teachers
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    subject VARCHAR(50)
+);
+
+-- Table for subject-wise marks
+CREATE TABLE marks (
+    mark_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    subject VARCHAR(50),
+    marks INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+-- Table for appointments
+CREATE TABLE appointments (
+    appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    teacher_id INT,
+    date DATE,
+    time TIME,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
+);
