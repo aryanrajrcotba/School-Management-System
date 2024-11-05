@@ -7,9 +7,6 @@ This is a Java-based School Management System that allows you to manage student 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Database Setup](#database-setup)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - **Student Management**: Add, view, and manage student details.
